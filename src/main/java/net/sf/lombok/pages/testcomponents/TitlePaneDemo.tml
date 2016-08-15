@@ -1,0 +1,91 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<head>
+    <title>TitlePaneDemo</title>
+    <style type="text/css">
+        div.myTpTitle{
+        border:1px solid black;
+        background-color:#A68DFF;
+        font-weight:bold;
+        color:yellow;
+        width:300px;
+        padding-left :2px;
+        padding-right :2px;
+        font-size:15px;
+        cursor:default;
+        }
+
+        div.myTpContent{
+        border:1px solid black;
+        background-color:#ebebeb;
+        color:blue;
+        padding-left :2px;
+        padding-right :2px;
+        width:300px;
+        font-size:11px;
+        font-style:italic;
+
+        }
+    </style>
+</head>
+<body>
+<h1>TitlePane demo</h1>
+A simple example to illustrate how to use TitlePane.
+<br/>
+Test : hide on load, default icons, effect = blind, default css
+<t:lombok.titlepane title="literal:Some Java code">
+            <pre>
+@Parameter("defaultMessage")
+private String _message;
+
+@Parameter(required=true)
+private int _maxLength;
+
+public String getDefaultMessage()
+{
+  return String.format("Maximum field length is %d.", _maxLength);
+}
+                        </pre>
+</t:lombok.titlepane>
+
+<br/>
+<br/>
+
+Test : show on load, supplied icons, effect = appear, supplied css
+<div t:type="lombok/titlepane" title="literal:Some Text" showOnLoad="prop:true"
+     effect="literal:appear" openedIcon="prop:openImg"
+     closedIcon="prop:closeImg"
+     titleClass="literal:myTpTitle"
+     contentClass="literal:myTpContent">
+    Lorem Ipsum Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque iaculis, nulla id semper faucibus,
+    pede tellus nonummy magna, vitae adipiscing orci arcu ut augue. Nunc condimentum, magna a vestibulum convallis,
+    libero purus pulvinar orci, sed vestibulum urna sem ut pede. More Ipsum... Sed sollicitudin suscipit risus. Nam
+    ullamcorper. Sed nisl lectus, pellentesque nec, malesuada eget, ornare a, libero. Lorem ipsum dolor sit amet,
+    consectetuer adipiscing elit.
+
+</div>
+
+<br/>
+<br/>
+Test : hide on load, no icons, effect = blind, default css
+<div t:type="lombok/titlepane" title="literal:Some Links " hideIcon="prop:true">
+    <ul>
+
+        <li>
+            <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemo1" target="_blank">N2WTextFieldDemo1</a>
+        </li>
+        <li>
+            <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemo2" target="_blank">N2WTextFieldDemo2</a>
+        </li>
+        <li>
+            <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemo3" target="_blank">N2WTextFieldDemo3</a>
+        </li>
+        <li>
+            <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemoloop" target="_blank">N2WTextFieldDemoLoop</a>
+        </li>
+
+    </ul>
+
+</div>
+
+</body>
+</html>

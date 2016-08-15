@@ -1,0 +1,93 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head>
+    <title>N2WTextFieldDemo3</title>
+    <style>
+        div.error {
+            font-size:12pt;
+            font-weight:600;
+            font-style:italic;
+            color:red;
+        }
+
+        div.word {
+            font-size:15pt;
+            font-style:normal;
+            color:blue;
+        }
+        span.error {
+            font-size:12pt;
+            font-weight:600;
+            font-style:italic;
+            color:red;
+        }
+
+        span.word {
+            font-size:15pt;
+            font-style:normal;
+            color:blue;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+<h1>N2WTextFieldDemo3 </h1>
+
+A demo on the component N2WTextField.
+
+<br/><br/>
+
+
+<form t:type="form">
+
+    Please enter number 0 (comma=F, wrap=F, wordPosition=BELOW") :
+    <input t:type="lombok/n2wTextField" type="input"  value="literal:12344"
+           commaFlag="false" wrapFlag="false"
+           wordPosition="literal:BELOW"
+           wordCSS="literal:word" errorCSS="literal:error"
+           maxlength="12" /> <br/>
+
+    Please enter number 1 (comma=F, wrap=T, wordPosition=BELOW") :
+    <input t:type="lombok/n2wTextField" type="input"  value="literal:123443"
+           commaFlag="false" wrapFlag="true"
+           wordPosition="BELOW"
+           wordCSS="word" errorCSS="error"
+           maxlength="12" /> <br/>
+
+    Please enter number 2 (comma=T, wrap=F, wordPosition=BELOW") :
+    <input t:type="lombok/n2wTextField" type="input"  value="literal:123443"
+           commaFlag="true" wrapFlag="false"
+           wordPosition="BELOW"
+           wordCSS="word" errorCSS="error"
+           maxlength="12" /> <br/>
+
+    Please enter number 3 (comma=T, wrap=T, wordPosition=BELOW") :
+    <input t:type="lombok/n2wTextField" type="input"  value="literal:123443"
+           commaFlag="true" wrapFlag="true"
+           wordPosition="BELOW"
+           wordCSS="word" errorCSS="error"
+           maxlength="12" /> <br/>
+
+    Please enter number 4 (comma=F, wrap=F, wordPosition=SAME_LINE") :
+    <input t:type="lombok/n2wTextField" type="input"  value="literal:123443"
+           commaFlag="false" wrapFlag="false"
+           wordPosition="SAME_LINE"
+           wordCSS="word" errorCSS="error"
+           maxlength="12" /> <br/>    <br/>
+
+    Please enter number 5 (comma=T, wrap=F, wordPosition=SAME_LINE") :
+    <input t:type="lombok/n2wTextField" type="input"  value="literal:123443"
+           commaFlag="true" wrapFlag="false"
+           wordPosition="SAME_LINE"
+           wordCSS="word" errorCSS="error"
+           maxlength="12" />
+
+
+</form>
+
+</body>
+</html>
+

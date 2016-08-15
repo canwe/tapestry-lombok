@@ -1,0 +1,47 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head>
+    <title>N2WTextFieldDemoLoop</title>
+</head>
+<body>
+<h1>N2WTextFieldDemoLoop</h1>
+A demo on the component N2WTextField.
+Set up
+<ul>
+    <li>Server side validator</li>
+    <li>Validation delegate</li>
+    <li>Label</li>
+</ul>
+
+<br/><br/>
+
+
+<form t:id="form">
+
+    <t:errors/>
+
+    <table border="1">
+        <tr t:type="loop" source="myNumbers" value="loopValue" index="loopIndex">
+
+            <td><span t:type="label" for="asset"> Please enter a number </span> :</td>
+            <td>
+                <input t:id="asset" t:type="lombok/n2wTextField" type="input" value="loopValue"
+                       wordPosition="literal:BELOW" commaFlag="true" wrapFlag="false"
+                       errorMessage="prop:errorMsg"
+                       label="prop:displayName" />
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+<t:if test="showOutput">
+    You have entered : <br/>
+    <t:loop source="0..2" value="loopIndex">
+        ${loopValue} <br/>
+    </t:loop>
+</t:if>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+<head>
+    <title>MaskedInput Mixin Demo</title>
+</head>
+<body>
+<h1>MaskedInput Mixin Demo</h1>
+
+A demo on the MaskedInput mixin. The javascript is by <a href="https://github.com/bjartekv/MaskedInput"> Bjarte K. Vebjørnsen </a>.
+
+<br/><br/>
+
+
+<h2>Default Definitions</h2>
+<ul>
+    <li>9 &nbsp; : &nbsp; [0-9]</li>
+    <li>a &nbsp; : &nbsp; [A-Za-z]</li>
+    <li>A &nbsp; : &nbsp; [A-Z]</li>
+    <li>* &nbsp; : &nbsp; [A-Za-z0-9]</li>
+</ul>
+
+
+<form t:id="myForm" t:type="form" clientValidation="none" autofocus="false">
+    <t:errors/>
+
+
+    <table border="1">
+        <tr>
+            <td>Phone number</td>
+            <td>
+                <input style="width:20em" t:type="textField" type="input" value="phoneNo" t:id="PhoneNo"
+                       t:mixins="lombok/maskedInput" mask="(999) 999-9999" validate="required"/>
+            </td>
+            <td> (999) 999-9999</td>
+        </tr>
+        <tr>
+            <td>Phone number and Ext</td>
+            <td>
+                <input style="width:20em" t:type="textField" type="input" value="phoneNoPExt" t:id="PhoneNoExt"
+                       t:mixins="lombok/maskedInput" mask="(999) 999-9999 x 9999" validate="required"/>
+            </td>
+            <td> (999) 999-9999 x 9999</td>
+        </tr>
+        <tr>
+            <td>US social security no</td>
+            <td>
+                <input style="width:20em" t:type="textField" type="input" value="socialSecurityNumber"
+                       t:id="socialSecurityNumber"
+                       t:mixins="lombok/maskedInput" mask="999-99-9999" validate="required"/>
+            </td>
+            <td>999-99-9999</td>
+        </tr>
+        <tr>
+            <td>UK Post code</td>
+            <td>
+                <input style="width:20em" t:type="textField" type="input" value="postCode" t:id="postCode"
+                       t:mixins="lombok/maskedInput" mask="A99 9AA" validate="required"/>
+            </td>
+            <td>A99 9AA</td>
+        </tr>
+        <tr>
+            <td>Product Key</td>
+            <td>
+                <input style="width:20em" t:type="textField" type="input" value="productKey" t:id="productKey"
+                       t:mixins="lombok/maskedInput" mask="a*-999-a999" validate="required"/>
+            </td>
+            <td>a*-999-a999</td>
+        </tr>
+    </table>
+
+    <h2>Custom Definition : ~ = -+ </h2>
+
+    <table border="1">
+        <tr>
+            <td>Custom</td>
+            <td>
+                <input style="width:20em" t:type="textField" type="input" value="custom" t:id="custom"
+                       t:mixins="lombok/maskedInput" mask="~9.99" definitions="myDefinitions" validate="required"/>
+            </td>
+            <td>~9.99</td>
+        </tr>
+
+    </table>
+
+    <br/>
+
+
+    <input type="submit" value="Submit"/>
+</form>
+
+<t:if test="showOutput">
+    <hr/>
+    You have entered : <br/>
+    <table>
+        <tr>
+            <td>Phone number :</td>
+            <td>
+                ${phoneNo}
+            </td>
+
+        </tr>
+        <tr>
+            <td>Phone number(ext):</td>
+            <td>
+                ${phoneNoPExt}
+            </td>
+        </tr>
+        <tr>
+            <td>US Social security no:</td>
+            <td>
+                ${socialSecurityNumber}
+            </td>
+        </tr>
+        <tr>
+            <td>UK Post code:</td>
+            <td>
+                ${postCode}
+            </td>
+        </tr>
+        <tr>
+            <td>Product key:</td>
+            <td>
+                ${productKey}
+            </td>
+        </tr>
+        <tr>
+            <td>custom:</td>
+            <td>
+                ${custom}
+            </td>
+        </tr>
+
+    </table>
+
+</t:if>
+
+</body>
+</html>

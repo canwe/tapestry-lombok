@@ -1,0 +1,41 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<head>
+    <title>Checkbox group</title>
+</head>
+<body>
+<h1>CheckboxGroup demo</h1>
+
+A simple example to illustrate how to use component ControlCB and
+mixin ControlledCheckbox to get a check box group.
+<br />
+<form t:type="form" t:id="myForm">
+
+    <br />
+
+    <table>
+
+        <tr t:type="loop" source="colors" value="color" >
+            <td>
+                <t:checkbox t:mixins="lombok/ControlledCheckbox" controller="colorController" value="selected"/>
+                ${color}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <!--  ControlCB can be placed before or after the controlledCheckboxes -->
+                <t:lombok.controlcb t:id="colorController" value="prop:selectAll" />
+                Select all colours
+            </th>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" />
+</form>
+
+<br />
+<br />
+<t:if test="selectedColorsAsStr">
+    You have selected : ${selectedColorsAsStr}
+</t:if>
+</body>
+</html>

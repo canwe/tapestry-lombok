@@ -1,0 +1,105 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<head>
+    <title>Syntax Highlighter</title>
+</head>
+<body>
+<h1>SyntaxHighlighter demo</h1>
+
+A simple example to illustrate how to use SyntaxHighlighter.
+<br/>
+
+<h2> A piece of Java Code </h2>
+
+    <pre t:type="lombok/syntaxhighlighter" language="literal:java">
+
+       package org.man.tapestry5.components;
+
+       import org.apache.tapestry.annotations.Environmental;
+
+       /**
+        * This component is to be ues with CheckboxGroup and ControlCheckbox.
+        * Select all the ControlledCheckboxes by checking this control checkbox.
+        * @author Shing Hing Man
+        *
+        */
+       public class ControlCheckbox {
+
+           @Environmental
+           private CheckboxContainer checkboxContainer;
+
+           public String getOnclickStr(){
+               String str = checkboxContainer.getFunctionName() + "(this.checked)";
+               return str;
+           }
+       }
+
+    </pre>
+
+<h2>A Piece of Html </h2>
+
+ <pre t:type="lombok/syntaxhighlighter" language="literal:html">
+
+    <t:outputraw value="prop:htmlcode"/>
+
+</pre>
+
+<h2>A Piece of JavaScript </h2>
+
+ <pre t:type="lombok/syntaxhighlighter" language="literal:js">
+ function tp_toggle(contentId, arrowId, openedIcon, closedIcon, effect)
+{
+
+ if ( $(contentId).visible()) {
+ // From visible to invisible
+ $(arrowId).src = closedIcon;
+ }
+ else {
+ $(arrowId).src = openedIcon;
+ }
+
+ Effect.toggle(contentId,effect,{duration:1})
+
+}
+
+</pre>
+
+<h2>A Piece of CSS </h2>
+
+ <pre t:type="lombok/syntaxhighlighter" language="literal:css">
+ div.t-error {
+border:1px solid red;
+margin:4px 0px;
+padding:0px;
+}
+div.t-error div {
+background-color:red;
+color:white;
+display:block;
+font-weight:bold;
+margin:0px;
+padding:2px;
+}
+div.t-error ul {
+background-color:white;
+color:red;
+margin:2px 0px;
+}
+div.t-error li {
+margin-left:-20px;
+}
+
+</pre>
+
+<h2>A Piece of Sql </h2>
+
+ <pre t:type="lombok/syntaxhighlighter" language="literal:sql">
+ CREATE TABLE my_table (
+  my_field1   INT,
+  my_field2   VARCHAR (50),
+  my_field3   DATE         NOT NULL,
+  PRIMARY KEY (my_field1, my_field2)
+);
+
+ </pre>
+</body>
+</html>

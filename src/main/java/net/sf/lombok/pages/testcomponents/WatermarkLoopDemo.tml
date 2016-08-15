@@ -1,0 +1,42 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head>
+    <title>Watermark Loop</title>
+</head>
+<body>
+<h1>Watermark Mixin </h1>
+A demo on the Watermark mixin in a loop
+<br/><br/>
+
+<form t:id="myForm" t:type="form" clientValidation="none" autofocus="false">
+    <t:errors/>
+    <table>
+
+        <tr t:type="loop" source="words" value="word" index="ind">
+            <td>
+                <t:label for="word">${label} </t:label>
+            </td>
+            <td>
+                <input style="padding:3px; margin:3px;width:20em" t:type="textField" type="input"
+                       value="word" t:id="word" validate="required"
+                       t:mixins="lombok/watermark" message="prop:msg"/>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <input type="submit" value="Submit"/>
+
+</form>
+
+<t:if test="showOutput">
+    You have entered : <br/>
+    <t:loop source="words" value="word" index="ind">
+        ${word} <br/>
+    </t:loop>
+
+</t:if>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<head>
+    <title>DynamicSelect Demo 2</title>
+</head>
+<body>
+<h1>DynamicSelect Demo 2</h1>
+
+A simple example on ParentSelect and ChildSelect. In this case, OptionModel.value being the Java class Bike.
+Note that when OptionModel.value is a custom Java class, it must override the equals method.
+
+<br/>
+<br/>
+
+<form t:type="form" t:id="myForm">
+
+    <br/>
+    Makes : <select t:type="lombok/ParentSelect" t:id="makes" model="'BMW,Harley Davidsion,Honda,Yamaha'" value="prop:make" />
+    Models: <select t:type="lombok/ChildSelect" t:id="bikes" parent="makes" models="childSelectModels" value="bike"/>
+    <br/>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+<t:if test="bike">
+    You have selected : <br/>
+    Brand : <b>${make} </b>
+    <br/>
+    Mode :
+    <table border="1">
+
+        <thead>
+        <tr>
+            <th scope="col"> Name</th>
+            <th scope="col"> Capacity</th>
+            <th scope="col"> Max Speed</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+            <td> ${bike.name} </td>
+            <td> ${bike.engineCapacity} </td>
+            <td>  ${bike.maxSpeed} </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</t:if>
+<br/>
+<br/>
+
+</body>
+</html>

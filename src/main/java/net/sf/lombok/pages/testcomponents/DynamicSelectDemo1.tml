@@ -1,0 +1,30 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>Dynamic Select Demo 1</title>
+</head>
+<body>
+<h1>Dynamic Select Demo 1</h1>
+
+A simple example on ParentSelect and ChildSelect. In this case, OptionModel.value is a String.
+
+
+<br/>
+<br/>
+
+<form t:type="form" t:id="myForm">
+
+    <br/>
+    Makes : <select t:type="lombok/parentSelect" t:id="makes" model="'BMW,Harley Davidsion,Honda,Yamaha'" value="prop:make" />
+    Models: <select t:type="lombok/childSelect" t:id="bikes" parent="makes" models="childSelectModels" value="bike" defaultOptions="defaultOptions"/>
+    <br/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<t:if test="bike">
+    You have selected the model <b>${bike}</b> from <b>${make}</b>.
+</t:if>
+<br/>
+<br/>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<head>
+    <title>Tab Demp</title>
+</head>
+<body>
+<h1>Tab demo</h1>
+
+A simple example on Tab component.
+
+<dl t:type="lombok/tab">
+
+    <dt>${tabALabel}</dt>
+    <!-- tab label -->
+    <dd style="height:10em">  <!-- tab panel -->
+        This is tab A.
+
+    </dd>
+
+    <dt>Javascript</dt>
+    <dd style="height:10em">
+
+    <pre style="background:#d8e2f0">
+    function tp_toggle(contentId, arrowId, openedIcon, closedIcon, effect)
+    {
+
+    if ( $(contentId).visible()) {
+    // From visible to invisible
+    $(arrowId).src = closedIcon;
+    }
+    else {
+    $(arrowId).src = openedIcon;
+    }
+
+    Effect.toggle(contentId,effect,{duration:1})
+
+    }
+    </pre>
+    </dd>
+
+    <dt>Some links</dt>
+    <dd style="height:30em">
+        <ul>
+            <li>
+                <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemo1" target="_blank">N2WTextFieldDemo1</a>
+            </li>
+            <li>
+                <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemo2" target="_blank">N2WTextFieldDemo2</a>
+            </li>
+            <li>
+                <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemo3" target="_blank">N2WTextFieldDemo3</a>
+            </li>
+            <li>
+                <a href="#" t:type="pageLink" page="lombok/testcomponents/n2wtextfielddemoloop" target="_blank">N2WTextFieldDemoLoop</a>
+            </li>
+        </ul>
+
+    </dd>
+
+</dl>
+
+</body>
+</html>

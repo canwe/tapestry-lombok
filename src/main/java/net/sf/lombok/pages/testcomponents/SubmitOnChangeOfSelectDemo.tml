@@ -1,0 +1,38 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<head>
+    <title>SubmitOnChangeOfSelect Mixin Demo </title>
+</head>
+<body>
+<h1> SubmitOnChangeOfSelect Mixin Demo</h1>
+
+A example to illustrate how to use the mixin SubmitOnChangeOfSelect. When the date format select changes value,
+the form will be submitted and the listener method onSelectFromDataFormatS in the Java page class will be called.
+The mixin is based on the SubmitOnChange.java example posted by IIya Obshadko in the Tapestry mailing list.
+
+<br/><br/>
+
+
+<form t:id="myForm" clientValidation="none">
+    <t:errors/>
+
+    Date format :
+    <t:select t:id="dateFormatS"
+              model="'dd/MMM/yyyy,yyyy-MMM-dd'" value="dateFormat" blankOption="never"
+              t:mixins="lombok/submitOnChangeOfSelect"/>
+    <br/>
+
+
+    <t:label for="maturityDate"/>
+    <t:DateField t:id="maturityDate" format="prop:dateFormat" value="maturityDate" validate="required"/>
+    <br/>
+
+    <INPUT t:type="submit" t:id="submit" value="Submit"/>
+</form>
+
+<t:if test="showInput">
+    You have entered :
+    <t:output value="maturityDate" format="dateFormat"/>
+
+</t:if>
+</body>
+</html>

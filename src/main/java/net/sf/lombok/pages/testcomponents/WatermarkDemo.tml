@@ -1,0 +1,66 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head>
+    <title>Watermark</title>
+</head>
+<body>
+<h1>Watermark Mixin</h1>
+A demo on the Watermark mixin.
+<br/><br/>
+
+<form t:id="myForm" t:type="form" clientValidation="none" autofocus="false">
+    <t:errors/>
+    <table>
+
+        <tr>
+            <td>
+                <t:label for="word">Word</t:label>
+            </td>
+            <td>
+                <input style="padding:3px; margin:3px" t:type="textField" type="input"
+                       value="word" t:id="word" validate="required"
+                       t:mixins="lombok/watermark" message="Please enter a word."/>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <t:label for="quantity">Quantity</t:label>
+            </td>
+            <td>
+
+                <input style="padding:3px; margin:3px" t:type="textField" type="input"
+                       value="quantity" t:id="quantity" validate="required"
+                       t:mixins="lombok/watermark" message="Please enter a number."/>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <t:label for="note">Note</t:label>
+            </td>
+            <td>
+
+                <input style="padding:3px; margin:3px;width:20em" t:type="textArea"
+                       type="input" value="note" t:id="note"
+                       t:mixins="lombok/watermark" message="Please enter a note."/>
+            </td>
+
+        </tr>
+    </table>
+    <input type="submit" value="Submit"/>
+
+</form>
+
+<t:if test="showOutput">
+    You have entered : <br/>
+    Word : ${word} <br/>
+    Quantity : ${quantity} <br/>
+    Note : ${note}
+</t:if>
+
+<span>
+
+</span>
+</body>
+</html>

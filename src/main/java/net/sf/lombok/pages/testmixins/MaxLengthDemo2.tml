@@ -1,0 +1,34 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+<head>
+    <title>MaxLength (Hide counter)</title>
+</head>
+<body>
+<h1>MaxLength Mixin (Hide counter)</h1>
+A demo on the MaxLength mixin, which limits number characters in a text area component.
+This is a slight modification of the version by
+<a href="http://tinybits.blogspot.com/2009/04/enforce-max-length-on-textareas-and_15.html"> Inge Solvoll</a>.
+<br/>
+<br/><br/>
+
+The following text area is limited to 30 characters.
+<form t:id="myForm" t:type="form" clientValidation="none" autofocus="false">
+    <t:errors/>
+
+    <input style="padding:3px; margin:3px;width:20em" t:type="textArea" type="input"
+           value="note" t:id="note"
+           t:mixins="lombok/maxlength" max="30" displayCounter="false" validate="required"/>
+
+    <br/>
+
+    <input type="submit" value="Submit"/>
+
+</form>
+
+<t:if test="showOutput">
+    You have entered : <br/>
+    Note : ${note}
+</t:if>
+
+</body>
+</html>

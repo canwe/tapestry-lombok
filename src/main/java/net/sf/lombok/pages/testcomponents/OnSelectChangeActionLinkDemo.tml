@@ -1,0 +1,40 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<head>
+    <title>OnSelectChangeActionLink Maxin Demo page</title>
+</head>
+<body>
+<h1> OnSelectChangeActionLink Mixin Demo</h1>
+When the select below change values, it triggers an action on the server. This is done using the url of
+an ActionLink with context being the selected value.
+<br/>
+<form t:id="myForm" t:type="form" autofocus="false" clientValidation="none">
+    <t:errors/>
+    Input
+    <t:select t:id="modeSelect" model="inputModeModel" value="prop:mode" style="width:5em"
+              blankOption="never" t:mixins="lombok/onSelectChangeActionLink"/>
+    <br/> <br/>
+
+    <t:delegate to="prop:blockToRender"/>
+    <br/><br/>
+    <input t:type="submit" t:id="inputButton" type="submit" value="Input"/>
+
+</form>
+
+<t:if test="showOutput">
+    ${output}
+</t:if>
+
+
+<t:block id="ageBlock">
+    <t:label for="age">Age</t:label>
+    <input t:type="TextField" t:id="age" validate="required" type="text" value="age"/>
+</t:block>
+
+
+<t:block id="cityBlock">
+    <t:label for="city">City</t:label>
+    <input t:type="TextField" t:id="city" validate="required" type="text" value="city"/>
+</t:block>
+
+</body>
+</html>

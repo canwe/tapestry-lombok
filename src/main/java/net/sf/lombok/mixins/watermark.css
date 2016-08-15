@@ -1,0 +1,7 @@
+/* WATERMARK component */
+div.watermarked {
+	font-size: 12px;
+	position: absolute;
+	display: block;
+	color: #999;
+}

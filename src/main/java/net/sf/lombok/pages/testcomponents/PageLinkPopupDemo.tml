@@ -1,0 +1,31 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head>
+    <title>PageLinkPopup</title>
+
+</head>
+
+
+<body>
+<h1>PageLinkPopupDemo</h1>
+A example on the custom component PageLinkPopup, which opens a Tapestry page in a pop up.
+<br/>
+
+<ul>
+    <li>
+        <a href="#" t:type="lombok/pagelinkPopup" t:page="start"
+           windowName="literal:Start"
+           features="literal: 'resizable,scrollbars,top=100,left=200,height=300,width=500'">Start</a>
+        Click to open the Start page in a pop up.
+    </li>
+    <li>
+        <a href="#" t:type="lombok/pagelinkPopup" t:page="test/sum"
+           windowName="literal:Sum"
+           features="literal:'resizable,scrollbars,top=100,left=200,height=300,width=500'">Sum</a>
+        Click to open the Sum page in a pop up.
+    </li>
+
+</ul>
+
+</body>
+</html>

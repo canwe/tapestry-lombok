@@ -1,0 +1,35 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head>
+    <title>N2WTextFieldDemo2</title>
+</head>
+<body>
+<h1>N2WTextFieldDemo2</h1>
+A demo on the component N2WTextField.
+Set up
+<ul>
+    <LI>Server side validator</LI>
+    <LI>Validation delegate</LI>
+    <LI>Label</LI>
+</ul>
+
+<br/><br/>
+
+<form t:id="form">
+    <t:errors/>
+
+    <span t:type="label" for="asset"> Please enter a number </span> :
+    <input t:id="asset" t:type="lombok/n2wTextField" type="input"  value="myNumber"
+           wordPosition="literal:BELOW"
+           errorMessage="literal:Please enter asset as a number"
+           label="literal:Total Asset"
+            /> <br/>
+
+    <input type="submit" value="Submit"/>
+</form>
+<t:if test="showOutput">
+    You have entered ${myNumber}
+</t:if>
+</body>
+</html>
+

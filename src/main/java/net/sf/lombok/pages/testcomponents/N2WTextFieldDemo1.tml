@@ -1,0 +1,41 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
+<head>
+    <title>N2WTextFieldDemo1</title>
+
+
+    <style type="text/css">
+        span.numberToWord {
+            font-size: 12pt;
+            font-style: italic;
+            color: blue;
+        }
+
+        span.error {
+            font-size: 18pt;
+            font-style: normal;
+            font-weight: 600;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h1>N2WTextFieldDemo1</h1>
+
+A demo on the component N2WTextField.
+
+<br/><br/>
+Test : css style for word output and error message. <br/><br/>
+
+<form t:id="myForm" t:type="form">
+    Please enter a number: <input t:type="lombok/n2wTextField" type="input" value="myNumber"
+                                  wordCSS="literal:numberToWord" errorCSS="literal:error"
+                                  maxlength="12"/> <br/>
+
+
+</form>
+
+</body>
+</html>
+

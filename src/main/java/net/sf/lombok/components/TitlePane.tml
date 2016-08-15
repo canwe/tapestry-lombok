@@ -1,0 +1,6 @@
+
+ <div class="${contentClass}" id="${contentId}" style="${showOnLoad}"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+          
+   <t:body/>
+ 
+ </div>
